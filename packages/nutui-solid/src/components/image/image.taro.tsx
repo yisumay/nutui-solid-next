@@ -1,7 +1,7 @@
 import { Component, JSX, ParentProps, Show, createEffect, createMemo, createSignal, mergeProps, onCleanup, onMount, splitProps } from 'solid-js'
 import { DOMElement } from 'solid-js/jsx-runtime'
 import { ImageError, ImageIcon } from '@nutui/icons-solid'
-import { pxCheck } from '@/utils/pxCheck'
+import { pxCheck } from '@/utils/px-check'
 
 export type ImageFit = 'contain' | 'cover' | 'fill' | 'none' | 'scale-down'
 export type ImagePosition = 'center' | 'top' | 'right' | 'bottom' | 'left' | string

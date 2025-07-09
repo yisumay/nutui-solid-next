@@ -1,0 +1,21 @@
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
+
+exports[`should sticky to bottom after scroll 1`] = `
+<div
+  class="nut-sticky"
+>
+  <div
+    class="nut-sticky__box"
+  />
+</div>
+`;
+
+exports[`should sticky to top after scroll 1`] = `
+<div
+  class="nut-sticky"
+>
+  <div
+    class="nut-sticky__box"
+  />
+</div>
+`;

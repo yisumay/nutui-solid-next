@@ -1,0 +1,68 @@
+---
+layout: ../../layouts/Layout.astro
+title: Sticky
+---
+
+import CodeBlock from '@/components/CodeBlock.astro'
+
+# Sticky 单元格 
+
+### 介绍
+
+使用 fixed 定位实现的类似 position: sticky 的吸顶效果。
+
+### 安装
+
+```tsx
+import { Sticky } from '@nutui/nutui-solid';
+```
+
+### 基础用法
+
+:::demo
+
+<CodeBlock src='basic.tsx'></CodeBlock>
+
+:::
+
+### 吸顶距离
+
+:::demo
+
+<CodeBlock src='top.tsx'></CodeBlock>
+
+:::
+
+### 指定容器
+
+:::demo
+
+<CodeBlock src='container.tsx'></CodeBlock>
+
+:::
+
+### 吸底距离
+
+:::demo
+
+<CodeBlock src='bottom.tsx'></CodeBlock>
+
+:::
+
+## API
+
+### Props
+
+| 参数 | 说明 | 类型 | 默认值 |
+| --- | --- | --- | --- |
+| position | 吸附位置（`top`、`bottom`） | string | `top` |
+| top | 吸顶距离，`position` 为 `top` 时生效 | number | `0` |
+| bottom | 吸底距离，`position` 为 `bottom` 时生效 | number | `0` |
+| container | 容器的 `HTML` 节点 | Element | - |
+| z-index | 吸附时的层级 | number | `99` |
+
+### Events
+
+| 事件名 | 说明 | 回调参数 |
+| --- | --- | --- |
+| onChange | 吸附状态改变时触发 | `fixed: boolean` |

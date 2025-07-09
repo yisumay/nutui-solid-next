@@ -1,6 +1,6 @@
 import { Component, JSX, ParentProps, createMemo, mergeProps, splitProps } from 'solid-js'
 import { GridContextProvider } from './grid.context'
-import { pxCheck } from '@/utils/pxCheck'
+import { pxCheck } from '@/utils/px-check'
 
 export type GridDirection = 'horizontal' | 'vertical'
 
@@ -13,7 +13,6 @@ export type GridLocalProps = Partial<{
   reverse: boolean
   direction: GridDirection
   clickable: boolean
-  onClickItem: (index: number) => void
 }>
 
 export type GridProps = JSX.HTMLAttributes<HTMLDivElement> & GridLocalProps
@@ -40,7 +39,6 @@ export const Grid: Component<ParentProps<GridProps>> = (props) => {
     'reverse',
     'direction',
     'clickable',
-    'onClickItem',
   ])
 
   const classes = createMemo(() => {
@@ -71,7 +69,6 @@ export const Grid: Component<ParentProps<GridProps>> = (props) => {
       reverse={local.reverse}
       direction={local.direction}
       clickable={local.clickable}
-      onClickItem={local.onClickItem}
     >
       <div classList={classes()} style={styles()}>
         {rest.children}

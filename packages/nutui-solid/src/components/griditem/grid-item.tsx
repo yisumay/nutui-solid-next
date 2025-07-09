@@ -1,6 +1,6 @@
 import { Component, JSX, ParentProps, createMemo, mergeProps, splitProps, useContext } from 'solid-js'
 import { GridContext } from '../grid/grid.context'
-import { pxCheck } from '@/utils/pxCheck'
+import { pxCheck } from '@/utils/px-check'
 
 export type GridItemProps = JSX.HTMLAttributes<HTMLDivElement> & Partial<{
   text: string

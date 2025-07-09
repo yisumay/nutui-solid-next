@@ -20,6 +20,8 @@ import Col from './col';
 export * from './col';
 import Space from './space';
 export * from './space';
+import Sticky from './sticky';
+export * from './sticky';
 
 
 import './button/index.scss';
@@ -33,5 +35,6 @@ import './layout/index.scss';
 import './row/index.scss';
 import './col/index.scss';
 import './space/index.scss';
+import './sticky/index.scss';
 
-export { Button, Cell, CellGroup, Image, Divider, Grid, GridItem, Layout, Row, Col, Space };
+export { Button, Cell, CellGroup, Image, Divider, Grid, GridItem, Layout, Row, Col, Space, Sticky };

@@ -1,0 +1,41 @@
+---
+import Demo from '@/components/Demo.astro';
+import MobileLayout from '@/layouts/MobileLayout.astro';
+import Basic from '~/nutui-solid/src/components/sticky/demos/basic.tsx';
+import Bottom from '~/nutui-solid/src/components/sticky/demos/bottom';
+import Top from '~/nutui-solid/src/components/sticky/demos/top';
+import Container from '~/nutui-solid/src/components/sticky/demos/container';
+
+
+const useTranslate = (obj) => {
+  return [obj['zh-CN']];
+};
+
+const [translated] = useTranslate({
+  'zh-CN': {
+    basic: '基础用法',
+    top: '吸顶距离',
+    container: '指定容器',
+    bottom: '吸底距离',
+  },
+  'en-US': {
+    basic: 'Basic Usage',
+    top: 'Top Distance',
+    container: 'Custom Container',
+    bottom: 'Bottom Distance'
+  },
+});
+---
+
+<MobileLayout>
+  <Demo>
+    <h2>{translated.basic}</h2>
+    <Basic client:only="solid-js" />
+     <h2>{translated.top}</h2>
+    <Top client:only="solid-js" />
+     <h2>{translated.container}</h2>
+    <Container client:only="solid-js" />
+    <h2>{translated.bottom}</h2>
+    <Bottom client:only="solid-js" />
+  </Demo>
+</MobileLayout>

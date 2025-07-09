@@ -1,6 +1,6 @@
 import { Component, JSX, ParentProps, Show, createMemo, mergeProps, splitProps } from 'solid-js'
 import { ArrowRight } from '@nutui/icons-solid'
-import { pxCheck } from '@/utils/pxCheck'
+import { pxCheck } from '@/utils/px-check'
 
 export type CellSize = 'normal' | 'large'
 

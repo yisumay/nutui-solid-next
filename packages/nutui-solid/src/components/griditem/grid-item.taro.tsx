@@ -1,7 +1,6 @@
 import { Component, JSX, ParentProps, createMemo, mergeProps, splitProps } from 'solid-js'
 import { useGridContext } from '../grid/grid.context'
-import { useGridItemContext } from '../grid/grid.item.context'
-import { pxCheck } from '@/utils/pxCheck'
+import { pxCheck } from '@/utils/px-check'
 
 export type GridItemProps = JSX.HTMLAttributes<HTMLDivElement> & Partial<{
   text: string
@@ -23,7 +22,6 @@ const defaultProps = {
 export const GridItem: Component<ParentProps<GridItemProps>> = (props) => {
   const merged = mergeProps(defaultProps, props)
   const parent = useGridContext()
-  const child = useGridItemContext()
 
   const [local, rest] = splitProps(merged, [
     'text',
@@ -40,9 +38,6 @@ export const GridItem: Component<ParentProps<GridItemProps>> = (props) => {
     }
     else if (parent.gutter) {
       style['padding-right'] = pxCheck(parent.gutter)
-      if (child.index >= +parent.columnNum) {
-        style['margin-top'] = pxCheck(parent.gutter)
-      }
     }
     return style
   })
@@ -64,9 +59,6 @@ export const GridItem: Component<ParentProps<GridItemProps>> = (props) => {
   const handleClick: JSX.EventHandlerUnion<HTMLDivElement, MouseEvent> = (e) => {
     if (typeof rest?.onClick === 'function') {
       rest.onClick(e)
-    }
-    if (parent?.onClickItem) {
-      parent?.onClickItem(child.index)
     }
     if (props.url) {
       props.replace ? location.replace(props.url) : (location.href = props.url)

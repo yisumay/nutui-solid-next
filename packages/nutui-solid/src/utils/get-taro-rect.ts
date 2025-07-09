@@ -21,7 +21,7 @@ export interface rectTaro {
   height: number
 }
 
-export const useTaroRectById = (id: string) => {
+export const getTaroRectById = (id: string) => {
   return new Promise((resolve, reject) => {
     if (Taro.getEnv() === Taro.ENV_TYPE.WEB) {
       const t = document ? document.querySelector(`#${id}`) : ''
@@ -45,7 +45,7 @@ export const useTaroRectById = (id: string) => {
   })
 }
 
-export const useTaroRect = (element: Element | Window | any): any => {
+export const getTaroRect = (element: Element | Window | any): any => {
   return new Promise((resolve, reject) => {
     if (Taro.getEnv() === Taro.ENV_TYPE.WEB) {
       if (element && element.$el) {

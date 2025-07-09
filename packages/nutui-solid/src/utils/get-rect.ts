@@ -22,7 +22,7 @@ export interface rect {
   height: number
 }
 
-export const useRect = (element: Element | Window | undefined) => {
+export const getRect = (element: Element | Window | undefined) => {
 
   if (isWindow(element)) {
     const width = element.innerWidth

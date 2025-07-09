@@ -1,7 +1,7 @@
 import { Component, JSX, ParentProps, createEffect, createMemo, mergeProps, onCleanup, onMount, splitProps } from 'solid-js'
 import { createStore } from 'solid-js/store'
-import { useRect } from '@/utils/useRect'
-import { getScrollParent } from '@/utils/useScrollParent'
+import { getRect } from '@/utils/get-rect'
+import { getScrollParent } from '@/hooks/use-scroll-parent'
 
 type StickyPosition = 'top' | 'bottom'
 
@@ -69,10 +69,10 @@ export const Sticky: Component<ParentProps<StickyProps>> = (props) => {
     const containerEle = local.container as HTMLElement
     if (!rootRef && !containerEle)
       return
-    const rootRect = useRect(rootRef)
+    const rootRect = getRect(rootRef)
     const stCurrent = stickyRef as Element
-    const stickyRect = useRect(stCurrent)
-    const containerRect = useRect(containerEle)
+    const stickyRect = getRect(stCurrent)
+    const containerRect = getRect(containerEle)
     setStore({ height: rootRect.height })
     setStore({ width: rootRect.width })
 

@@ -1,7 +1,7 @@
 import { Component, JSX, ParentProps, createEffect, createMemo, mergeProps, onCleanup, onMount, splitProps } from 'solid-js'
 import { createStore } from 'solid-js/store'
 import { usePageScroll } from '@tarojs/taro'
-import { useTaroRect } from '@/utils/useTaroRect'
+import { getTaroRect } from '@/utils/get-taro-rect'
 
 export type StickyProps = JSX.HTMLAttributes<HTMLDivElement> & Partial<{
   top: string | number
@@ -52,7 +52,7 @@ export const Sticky: Component<ParentProps<StickyProps>> = (props) => {
   })
 
   const handleScroll = (top: number | string) => {
-    useTaroRect(rootRef).then(
+    getTaroRect(rootRef).then(
       (rootRect: any) => {
         setStore({ height: rootRect.height, width: rootRect.width, fixed: Number(top) >= rootRect.top })
       },

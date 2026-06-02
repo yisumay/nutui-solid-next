@@ -33,6 +33,7 @@ export const Sticky: Component<ParentProps<StickyProps>> = (props) => {
     'container',
     'zIndex',
     'onChange',
+    'class',
   ])
 
   const [store, setStore] = createStore({
@@ -126,8 +127,10 @@ export const Sticky: Component<ParentProps<StickyProps>> = (props) => {
     el.removeEventListener('scroll', handleScroll)
   })
 
+  console.log('[ local.class ] >', local.class)
+
   return (
-    <div ref={rootRef} class="nut-sticky" style={rootStyle()}>
+    <div ref={rootRef} class="nut-sticky" style={rootStyle()} {...rest}>
       <div ref={stickyRef} class="nut-sticky__box" style={stickyStyle()}>{rest.children}</div>
     </div>
   )

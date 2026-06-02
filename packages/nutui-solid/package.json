@@ -26,7 +26,8 @@
   },
   "dependencies": {
     "@nutui/icons-solid": "workspace:*",
-    "classnames": "^2.5.1"
+    "classnames": "^2.5.1",
+    "solid-transition-group": "^0.3.0"
   },
   "devDependencies": {
     "@babel/core": "^7.23.3",
